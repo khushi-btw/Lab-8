@@ -1,0 +1,578 @@
+
+/* ---------- Global styles ---------- */
+
+:root {
+    --purple: #8061d8;
+    --purple-dark: #6848bd;
+    --lavender: #f2edff;
+    --text: #302847;
+    --muted: #827b91;
+    --border: #e8e2f2;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f0ff, #fbf9ff 55%, #eee7ff);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--purple);
+    color: white;
+    font-size: 21px;
+}
+
+.header-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+/* ---------- Page layout ---------- */
+
+.page-wrapper {
+    padding: 22px 16px 32px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 490px;
+    margin: 0 auto;
+    padding: 36px 38px;
+    background: var(--white);
+    border: 1px solid rgba(128, 97, 216, 0.12);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(74, 48, 130, 0.09);
+    animation: appear 0.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Heading ---------- */
+
+.form-heading {
+    text-align: center;
+}
+
+.heading-icon {
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    width: 48px;
+    height: 48px;
+    background: var(--lavender);
+    color: var(--purple);
+    border-radius: 16px;
+    font-size: 25px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 750;
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+.form-heading h1 {
+    font-size: clamp(25px, 5vw, 31px);
+    line-height: 1.3;
+    letter-spacing: -1px;
+}
+
+.form-heading h1 span {
+    color: var(--purple);
+}
+
+.subtitle {
+    max-width: 310px;
+    margin: 10px auto 24px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* ---------- Progress indicator ---------- */
+
+.progress-track {
+    height: 4px;
+    background: var(--lavender);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #a48bea, #8061d8);
+    border-radius: inherit;
+}
+
+.form-step {
+    display: flex;
+    justify-content: space-between;
+    margin: 17px 0 21px;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1px;
+    color: var(--text);
+}
+
+.form-step span {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* ---------- Form fields ---------- */
+
+.field {
+    border: 0;
+    min-width: 0;
+    margin-bottom: 19px;
+}
+
+.field > label,
+.field legend {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field > label > span,
+.field legend span {
+    color: var(--purple);
+}
+
+.field input:not([type="radio"]) {
+    width: 100%;
+    height: 46px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fdfcff;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s,
+                background 0.2s;
+}
+
+.field input::placeholder {
+    color: #aaa3b8;
+}
+
+.field input:focus {
+    border-color: var(--purple);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(128, 97, 216, 0.12);
+}
+
+.field input:invalid:not(:placeholder-shown) {
+    border-color: #d66c80;
+}
+
+/* ---------- Input icons ---------- */
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    color: var(--purple);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.input-with-icon input {
+    padding-left: 40px !important;
+}
+
+.hint {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* ---------- Gender selection ---------- */
+
+.gender-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.gender-option {
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+.gender-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gender-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 4px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: #6c647b;
+    font-size: 11px;
+    font-weight: 650;
+    transition: 0.2s;
+}
+
+.gender-option:hover span {
+    border-color: #b8a4eb;
+}
+
+.gender-option input:checked + span {
+    border-color: var(--purple);
+    background: var(--lavender);
+    color: var(--purple-dark);
+    box-shadow: inset 0 0 0 1px var(--purple);
+}
+
+.gender-option input:focus-visible + span {
+    outline: 2px solid var(--purple);
+    outline-offset: 3px;
+}
+
+/* ---------- Location divider ---------- */
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 22px;
+}
+
+.section-divider span {
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+}
+
+.section-divider p {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.1px;
+    white-space: nowrap;
+}
+
+/* ---------- Button and messages ---------- */
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(110deg, #9274e4, #7554cb);
+    color: white;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(128, 97, 216, 0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-button span {
+    font-size: 19px;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(128, 97, 216, 0.3);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible {
+    outline: 3px solid #b9a5f2;
+    outline-offset: 3px;
+}
+
+.form-message {
+    color: #b13e59;
+    font-size: 12px;
+    margin: -5px 0 12px;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.privacy-note {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 10px;
+    text-align: center;
+}
+
+/* ---------- Profile display page ---------- */
+
+.profile-card {
+    width: 100%;
+    max-width: 490px;
+    margin: 0 auto;
+    padding: 36px;
+    background: white;
+    border: 1px solid rgba(128, 97, 216, 0.12);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(74, 48, 130, 0.09);
+    animation: appear 0.5s ease;
+}
+
+.profile-top {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 15px;
+    border: 4px solid #f1eaff;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c9b7ff, #8b6ce0);
+    color: white;
+    font-size: 29px;
+    font-weight: 750;
+}
+
+.profile-top h1 {
+    font-size: 27px;
+    overflow-wrap: anywhere;
+}
+
+.profile-top p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.profile-badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: var(--lavender);
+    color: var(--purple-dark);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.details-heading {
+    margin: 24px 0 12px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0edf5;
+}
+
+.detail-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: var(--lavender);
+    color: var(--purple);
+}
+
+.detail-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.detail-label {
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.detail-value {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+.profile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    color: var(--purple-dark);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.secondary-button:hover {
+    background: var(--lavender);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.empty-state p {
+    margin: 12px 0 22px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ---------- Footer ---------- */
+
+.page-footer {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.page-footer span {
+    color: #a17ce7;
+}
+
+/* ---------- Responsive design ---------- */
+
+@media (max-width: 520px) {
+    .site-header {
+        padding: 17px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header-tag {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .page-wrapper {
+        padding: 12px 12px 25px;
+    }
+
+    .form-card,
+    .profile-card {
+        padding: 27px 20px;
+        border-radius: 19px;
+    }
+
+    .gender-options {
+        gap: 5px;
+    }
+
+    .gender-option span {
+        font-size: 10px;
+    }
+
+    .profile-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

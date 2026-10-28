@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Create Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">A</span>
+            Aura
+        </a>
+        <span class="header-tag">YOUR PERSONAL SPACE</span>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="form-card">
+            <div class="form-heading">
+                <div class="heading-icon">✦</div>
+                <p class="eyebrow">LET'S GET STARTED</p>
+                <h1>Create your profile<span>.</span></h1>
+                <p class="subtitle">
+                    We'd love to know a little more about you.
+                    Fill in your details below.
+                </p>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="form-step">PERSONAL DETAILS <span>7 FIELDS</span></p>
+
+            <form id="userForm">
+                <div class="field">
+                    <label for="name">Full name <span>*</span></label>
+                    <input type="text" id="name" name="name"
+                           placeholder="e.g. Khushi Raj"
+                           minlength="2" maxlength="80"
+                           autocomplete="name" required>
+                </div>
+
+                <fieldset class="field gender-field">
+                    <legend>Gender <span>*</span></legend>
+                    <div class="gender-options">
+                        <label class="gender-option">
+                            <input type="radio" name="gender"
+                                   value="Female" required>
+                            <span>♀ &nbsp; Female</span>
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" name="gender"
+                                   value="Male">
+                            <span>♂ &nbsp; Male</span>
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" name="gender"
+                                   value="Other">
+                            <span>✦ &nbsp; Other</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="mobile">Mobile number <span>*</span></label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">☎</span>
+                        <input type="tel" id="mobile" name="mobile"
+                               placeholder="10-digit mobile number"
+                               pattern="[0-9]{10}" maxlength="10"
+                               inputmode="numeric" autocomplete="tel"
+                               title="Enter exactly 10 digits"
+                               required>
+                    </div>
+                    <small class="hint">Enter 10 digits without the country code.</small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address <span>*</span></label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">✉</span>
+                        <input type="email" id="email" name="email"
+                               placeholder="you@example.com"
+                               maxlength="254" autocomplete="email"
+                               required>
+                    </div>
+                </div>
+
+                <div class="section-divider">
+                    <span></span>
+                    <p>WHERE ARE YOU FROM?</p>
+                    <span></span>
+                </div>
+
+                <div class="field">
+                    <label for="city">City <span>*</span></label>
+                    <input type="text" id="city" name="city"
+                           placeholder="Enter your city"
+                           maxlength="100" autocomplete="address-level2"
+                           required>
+                </div>
+
+                <div class="field">
+                    <label for="state">State / Province <span>*</span></label>
+                    <input type="text" id="state" name="state"
+                           placeholder="Enter your state"
+                           maxlength="100" autocomplete="address-level1"
+                           required>
+                </div>
+
+                <div class="field">
+                    <label for="country">Country <span>*</span></label>
+                    <input type="text" id="country" name="country"
+                           placeholder="Enter your country"
+                           maxlength="100" autocomplete="country-name"
+                           required>
+                </div>
+
+                <p id="formMessage" class="form-message"
+                   role="alert" aria-live="polite"></p>
+
+                <button type="submit" class="primary-button">
+                    Create My Profile <span>→</span>
+                </button>
+
+                <p class="privacy-note">
+                    ♡ &nbsp; Your details stay in this browser for this demo.
+                </p>
+            </form>
+        </section>
+
+        <footer class="page-footer">
+            Made with <span>♥</span> for your next chapter.
+        </footer>
+    </main>
+
+</body>
+</html>

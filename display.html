@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">A</span>
+             Aura
+        </a>
+        <span class="header-tag">YOUR PERSONAL SPACE</span>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="profile-card" id="profileCard">
+            <div class="profile-top">
+                <div class="avatar" id="avatar">?</div>
+                <h1 id="profileName">Your Profile</h1>
+                <p>Your personal information, all in one place.</p>
+                <span class="profile-badge" id="profileGender">
+                    Profile
+                </span>
+            </div>
+
+            <h2 class="details-heading">CONTACT INFORMATION</h2>
+            <div id="contactDetails"></div>
+
+            <h2 class="details-heading">LOCATION DETAILS</h2>
+            <div id="locationDetails"></div>
+
+            <div class="profile-actions">
+                <a href="index.html" class="primary-button"
+                   id="editButton">
+                    Edit Details &nbsp; ✎
+                </a>
+                <button type="button" class="secondary-button"
+                        id="clearButton">
+                    Clear Profile
+                </button>
+            </div>
+        </section>
+
+        <section class="profile-card empty-state"
+                 id="emptyState" hidden>
+            <div class="heading-icon">✦</div>
+            <h1>No profile yet</h1>
+            <p>
+                You haven't submitted your information.
+                Create your profile to see your details here.
+            </p>
+            <a href="index.html" class="primary-button">
+                Create Your Profile →
+            </a>
+        </section>
+
+        <footer class="page-footer">
+            Made with <span>♥</span> for your next chapter.
+        </footer>
+    </main>
+
+</body>
+</html>
